@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="People_EF_DBFirstModelStoreContainer" CdmEntityContainer="People_EF_DBFirstEntities">
+    <EntitySetMapping Name="TB_Employee">
+      <EntityTypeMapping TypeName="People_EF_DBFirstModel.TB_Employee">
+        <MappingFragment StoreEntitySet="TB_Employee">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ER">
+      <EntityTypeMapping TypeName="People_EF_DBFirstModel.TB_ER">
+        <MappingFragment StoreEntitySet="TB_ER">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EId" ColumnName="EId" />
+          <ScalarProperty Name="RId" ColumnName="RId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Role">
+      <EntityTypeMapping TypeName="People_EF_DBFirstModel.TB_Role">
+        <MappingFragment StoreEntitySet="TB_Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_GetEmployees" FunctionName="People_EF_DBFirstModel.Store.Proc_GetEmployees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="People_EF_DBFirstModel.Proc_GetEmployees_Result">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

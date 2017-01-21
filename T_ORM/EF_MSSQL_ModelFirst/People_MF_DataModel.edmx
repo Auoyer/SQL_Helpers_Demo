@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="People_MF_DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="People_MF_DataModelStoreContainer">
+    <EntitySet Name="TableASet" EntityType="People_MF_DataModel.Store.TableASet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TableBSet" EntityType="People_MF_DataModel.Store.TableBSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TableATableB" Association="People_MF_DataModel.Store.TableATableB">
+      <End Role="TableA" EntitySet="TableASet" />
+      <End Role="TableB" EntitySet="TableBSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TableASet">
+    <Key>
+      <PropertyRef Name="A_Id" />
+    </Key>
+    <Property Name="A_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="A_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableBSet">
+    <Key>
+      <PropertyRef Name="B_Id" />
+    </Key>
+    <Property Name="B_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Like" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="A_Id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TableAA_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="TableATableB">
+    <End Role="TableA" Type="People_MF_DataModel.Store.TableASet" Multiplicity="1" />
+    <End Role="TableB" Type="People_MF_DataModel.Store.TableBSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableA">
+        <PropertyRef Name="A_Id" />
+      </Principal>
+      <Dependent Role="TableB">
+        <PropertyRef Name="TableAA_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="People_MF_DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="People_MF_DataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableASet" EntityType="People_MF_DataModel.TableA" />
+          <EntitySet Name="TableBSet" EntityType="People_MF_DataModel.TableB" />
+          <AssociationSet Name="TableATableB" Association="People_MF_DataModel.TableATableB">
+            <End Role="TableA" EntitySet="TableASet" />
+            <End Role="TableB" EntitySet="TableBSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TableA">
+          <Key>
+            <PropertyRef Name="A_Id" />
+          </Key>
+          <Property Name="A_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="TableB" Relationship="People_MF_DataModel.TableATableB" FromRole="TableA" ToRole="TableB" />
+        </EntityType>
+        <EntityType Name="TableB">
+          <Key>
+            <PropertyRef Name="B_Id" />
+          </Key>
+          <Property Name="B_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="B_Like" Type="String" Nullable="false" />
+          <Property Name="A_Id" Type="String" Nullable="false" />
+          <NavigationProperty Name="TableA" Relationship="People_MF_DataModel.TableATableB" FromRole="TableB" ToRole="TableA" />
+          <Property Name="TableAA_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TableATableB">
+          <End Type="People_MF_DataModel.TableA" Role="TableA" Multiplicity="1" />
+          <End Type="People_MF_DataModel.TableB" Role="TableB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableA">
+              <PropertyRef Name="A_Id" />
+            </Principal>
+            <Dependent Role="TableB">
+              <PropertyRef Name="TableAA_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="People_MF_DataModelStoreContainer" CdmEntityContainer="People_MF_DataModelContainer">
+    <EntitySetMapping Name="TableASet">
+      <EntityTypeMapping TypeName="IsTypeOf(People_MF_DataModel.TableA)">
+        <MappingFragment StoreEntitySet="TableASet">
+          <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+          <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableBSet">
+      <EntityTypeMapping TypeName="IsTypeOf(People_MF_DataModel.TableB)">
+        <MappingFragment StoreEntitySet="TableBSet">
+          <ScalarProperty Name="B_Id" ColumnName="B_Id" />
+          <ScalarProperty Name="B_Like" ColumnName="B_Like" />
+          <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+          <ScalarProperty Name="TableAA_Id" ColumnName="TableAA_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="People_EF_DBFirstModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_ER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EId" Type="Int32" Nullable="false" />
+    <Property Name="RId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="People_EF_DBFirstEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Employee" EntityType="Self.TB_Employee" />
+    <EntitySet Name="TB_ER" EntityType="Self.TB_ER" />
+    <EntitySet Name="TB_Role" EntityType="Self.TB_Role" />
+    <FunctionImport Name="Proc_GetEmployees" ReturnType="Collection(People_EF_DBFirstModel.Proc_GetEmployees_Result)" />
+  </EntityContainer>
+  <ComplexType Name="Proc_GetEmployees_Result">
+    <Property Type="Int32" Name="EmployeeId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Salary" Nullable="false" />
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>

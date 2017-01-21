@@ -1,0 +1,12 @@
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\Models.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\Models.pdb
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\mscorlib.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\zh-Hans\mscorlib.resources.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\normidna.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\normnfc.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\normnfd.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\normnfkc.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\bin\Debug\normnfkd.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\obj\Debug\Models.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Models\obj\Debug\Models.pdb

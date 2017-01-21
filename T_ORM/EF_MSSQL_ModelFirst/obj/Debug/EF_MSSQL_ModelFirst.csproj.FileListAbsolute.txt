@@ -1,0 +1,1 @@
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\EF_MSSQL_ModelFirst\obj\Debug\EF_MSSQL_ModelFirst.csprojResolveAssemblyReference.cache

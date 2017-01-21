@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="People_MF_DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="People_MF_DataModelStoreContainer">
+    <EntitySet Name="TableASet" EntityType="People_MF_DataModel.Store.TableASet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TableBSet" EntityType="People_MF_DataModel.Store.TableBSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TableATableB" Association="People_MF_DataModel.Store.TableATableB">
+      <End Role="TableA" EntitySet="TableASet" />
+      <End Role="TableB" EntitySet="TableBSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TableASet">
+    <Key>
+      <PropertyRef Name="A_Id" />
+    </Key>
+    <Property Name="A_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="A_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableBSet">
+    <Key>
+      <PropertyRef Name="B_Id" />
+    </Key>
+    <Property Name="B_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="B_Like" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="A_Id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TableAA_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="TableATableB">
+    <End Role="TableA" Type="People_MF_DataModel.Store.TableASet" Multiplicity="1" />
+    <End Role="TableB" Type="People_MF_DataModel.Store.TableBSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableA">
+        <PropertyRef Name="A_Id" />
+      </Principal>
+      <Dependent Role="TableB">
+        <PropertyRef Name="TableAA_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

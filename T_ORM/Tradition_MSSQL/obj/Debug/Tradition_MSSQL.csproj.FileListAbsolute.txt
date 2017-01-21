@@ -1,0 +1,13 @@
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\Tradition_MSSQL.exe.config
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\Tradition_MSSQL.exe
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\Tradition_MSSQL.pdb
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\mscorlib.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\zh-Hans\mscorlib.resources.dll
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\normidna.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\normnfc.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\normnfd.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\normnfkc.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\bin\Debug\normnfkd.nlp
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\obj\Debug\Tradition_MSSQL.csprojResolveAssemblyReference.cache
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\obj\Debug\Tradition_MSSQL.exe
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\Tradition_MSSQL\obj\Debug\Tradition_MSSQL.pdb

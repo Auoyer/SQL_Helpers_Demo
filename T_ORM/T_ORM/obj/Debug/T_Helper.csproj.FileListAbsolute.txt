@@ -1,0 +1,5 @@
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\T_ORM\bin\Debug\T_ORM.exe.config
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\T_ORM\obj\Debug\T_Helper.csprojResolveAssemblyReference.cache
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\T_ORM\obj\Debug\T_ORM.Resource.Lang_zh.resources
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\T_ORM\obj\Debug\T_ORM.Resource.Lang_en.resources
+C:\Users\RED\Documents\GitHub\SQL_Helpers_Demo\T_ORM\T_ORM\obj\Debug\T_Helper.csproj.GenerateResource.Cache

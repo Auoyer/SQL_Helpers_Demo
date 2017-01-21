@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="People_EF_DBFirstModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="10" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_ER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EId" Type="int" Nullable="false" />
+    <Property Name="RId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Function Name="Proc_GetEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="People_EF_DBFirstModelStoreContainer">
+    <EntitySet Name="TB_Employee" EntityType="Self.TB_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ER" EntityType="Self.TB_ER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Role" EntityType="Self.TB_Role" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

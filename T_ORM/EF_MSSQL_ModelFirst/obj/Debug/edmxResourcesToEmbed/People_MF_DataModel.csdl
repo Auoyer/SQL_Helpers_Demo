@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="People_MF_DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="People_MF_DataModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TableASet" EntityType="People_MF_DataModel.TableA" />
+    <EntitySet Name="TableBSet" EntityType="People_MF_DataModel.TableB" />
+    <AssociationSet Name="TableATableB" Association="People_MF_DataModel.TableATableB">
+      <End Role="TableA" EntitySet="TableASet" />
+      <End Role="TableB" EntitySet="TableBSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TableA">
+    <Key>
+      <PropertyRef Name="A_Id" />
+    </Key>
+    <Property Name="A_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="A_Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="TableB" Relationship="People_MF_DataModel.TableATableB" FromRole="TableA" ToRole="TableB" />
+  </EntityType>
+  <EntityType Name="TableB">
+    <Key>
+      <PropertyRef Name="B_Id" />
+    </Key>
+    <Property Name="B_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="B_Like" Type="String" Nullable="false" />
+    <Property Name="A_Id" Type="String" Nullable="false" />
+    <NavigationProperty Name="TableA" Relationship="People_MF_DataModel.TableATableB" FromRole="TableB" ToRole="TableA" />
+    <Property Name="TableAA_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="TableATableB">
+    <End Type="People_MF_DataModel.TableA" Role="TableA" Multiplicity="1" />
+    <End Type="People_MF_DataModel.TableB" Role="TableB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableA">
+        <PropertyRef Name="A_Id" />
+      </Principal>
+      <Dependent Role="TableB">
+        <PropertyRef Name="TableAA_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

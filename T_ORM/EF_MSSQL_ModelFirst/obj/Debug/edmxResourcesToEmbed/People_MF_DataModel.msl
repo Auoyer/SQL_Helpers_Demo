@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="People_MF_DataModelStoreContainer" CdmEntityContainer="People_MF_DataModelContainer">
+    <EntitySetMapping Name="TableASet">
+      <EntityTypeMapping TypeName="IsTypeOf(People_MF_DataModel.TableA)">
+        <MappingFragment StoreEntitySet="TableASet">
+          <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+          <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableBSet">
+      <EntityTypeMapping TypeName="IsTypeOf(People_MF_DataModel.TableB)">
+        <MappingFragment StoreEntitySet="TableBSet">
+          <ScalarProperty Name="B_Id" ColumnName="B_Id" />
+          <ScalarProperty Name="B_Like" ColumnName="B_Like" />
+          <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+          <ScalarProperty Name="TableAA_Id" ColumnName="TableAA_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
